@@ -1,7 +1,7 @@
 <template>
 	<transition name="fade-minimodal">
 	<div class="ctip-modal modal-mini" v-show="containerTip"  @mousedown.stop="">
-	<img src="../../../../assets/images/ct.gif" alt="">
+	<img src="/assets/images/ct.gif" alt="">
 		<p>将图片拖放到图片容器可替换图片</p>
 		<button @click="setContainerTip">知道了</button>
 		<i @click="closeTip"></i>
@@ -64,7 +64,7 @@
 		width: 12px;
 		height: 12px;
 		cursor: pointer;
-		background: url(../../../../assets/images/close1.png) 0 0/cover no-repeat;
+		background: url(/assets/images/close1.png) 0 0/cover no-repeat;
 	}
 }
 </style>

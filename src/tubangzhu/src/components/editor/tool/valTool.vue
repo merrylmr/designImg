@@ -23,7 +23,7 @@ export default{
             }else if(this.getMode=='container'){
                 eventBus.$emit("applyContainer",true);
             }
-            
+
         },
         no(){
             if(this.getMode=='cropper'){
@@ -31,7 +31,7 @@ export default{
             }else if(this.getMode=='container'){
                 eventBus.$emit("applyContainer",false);
             }
-            
+
         }
     }
 }
@@ -39,7 +39,7 @@ export default{
 <style lang="scss">
     .val-tool{
         .btn{
-            background:url(../../../assets/images/val-tool-btn.png);
+            background:url(/assets/images//val-tool-btn.png);
             width: 30px;
         }
         .yes{

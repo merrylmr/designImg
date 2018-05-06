@@ -2,7 +2,7 @@
 	<div class="nav" :style="{background:(pcMode==false?color.bgColor:'#262b30')}">
 		<div class="logo" :style="{background:color.bgDark,color:color.fontColor,opacity:(pcMode==false?1:0)}">
 			<a :href="logoLink" v-if="!isCoop">
-				<img src="../../../assets/images/jianye.png" alt="">
+				<img src="/assets/images//jianye.png" alt="">
 			</a>
 			<a :href="logoLink" class="coop-logo" v-else>{{coopLetter}}</a>
 		</div>

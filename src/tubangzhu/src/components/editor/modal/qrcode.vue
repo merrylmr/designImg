@@ -79,7 +79,7 @@ $blue: #00a2eb;
   .close-code {
     width: 12px;
     height: 12px;
-    background: url(../../../assets/images/close1.png) 0 0 no-repeat transparent;
+    background: url(/assets/images//close1.png) 0 0 no-repeat transparent;
     position: absolute;
     zoom: 1;
     top: 12px;

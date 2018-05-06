@@ -910,7 +910,7 @@ export default {
     display: inline-block;
   }
   .align-icon {
-    background: url(../../../assets/images/icon/ico-align.png) no-repeat;
+    background: url(/assets/images//icon/ico-align.png) no-repeat;
   }
   .active {
     background-color: #e5e5e5 !important;

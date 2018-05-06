@@ -232,12 +232,12 @@ $blue: #00a2eb;
     height: 89px;
     margin-right: -6.5px;
     margin-top: -44.5px;
-    background: url(../../../assets/images/icon/ico-turn1.png) no-repeat 0 0;
+    background: url(/assets/images//icon/ico-turn1.png) no-repeat 0 0;
     color: #fff;
     cursor: pointer;
 
     &.turnoff {
-      background: url(../../../assets/images/icon/ico-turn2.png) no-repeat 0 0;
+      background: url(/assets/images//icon/ico-turn2.png) no-repeat 0 0;
     }
   }
   .menu {
@@ -253,7 +253,7 @@ $blue: #00a2eb;
       li {
         cursor: pointer;
         width: 66px;
-        background: url(../../../assets/images/icon/ico_menu.png) no-repeat 0 0;
+        background: url(/assets/images//icon/ico_menu.png) no-repeat 0 0;
         zoom: 1;
         height: 67px;
         text-align: center;
@@ -286,7 +286,7 @@ $blue: #00a2eb;
           background-position: 23px -400px;
         }
         &.help {
-          background: url(../../../assets/images/icon/ico-help.png) no-repeat
+          background: url(/assets/images//icon/ico-help.png) no-repeat
             23px 15px;
           position: absolute;
           bottom: 10px;
@@ -323,7 +323,7 @@ $blue: #00a2eb;
             background-position: -54px -124px;
           }
           &.help {
-            background: url(../../../assets/images/icon/ico-help.png) no-repeat
+            background: url(/assets/images//icon/ico-help.png) no-repeat
               23px -45px;
             a {
               color: #fff;

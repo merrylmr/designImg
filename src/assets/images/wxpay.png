@@ -1,0 +1,8 @@
+module.exports = __webpack_public_path__ + "static/img/wxpay.0e5fa2e.png";
+
+
+//////////////////
+// WEBPACK FOOTER
+// ./src/assets/images/wxpay.png
+// module id = 398
+// module chunks = 0

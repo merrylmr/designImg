@@ -605,7 +605,7 @@ $blue:#00a2eb;
 		i {
 			width: 40px;
 			height: 40px;
-			background: url(../../../assets/images/search.png) 0 0 no-repeat transparent;
+			background: url(/assets/images//search.png) 0 0 no-repeat transparent;
 			border-top-right-radius: 5px;
 			border-bottom-right-radius: 5px;
 			position: absolute;
@@ -633,7 +633,7 @@ $blue:#00a2eb;
 					display: block;
 					width: 76px;
 					height: 70px;
-					background: url(../../../assets/images/elsort.png) 0 0 no-repeat transparent;
+					background: url(/assets/images//elsort.png) 0 0 no-repeat transparent;
 					position: relative;
 					zoom: 1;
 					z-index: 3;
@@ -653,9 +653,9 @@ $blue:#00a2eb;
 					&.icon-line{background-position: 0 -458px;}
 					&.icon-table{background-position: -187px -235px;}
 					&.icon-fold{
-						background: url(../../../assets/images/elGroup.png) 0 0 no-repeat transparent;
+						background: url(/assets/images//elGroup.png) 0 0 no-repeat transparent;
 						&.icon-holiday{
-							background: url(../../../assets/images/holiday1.png) 0 0 no-repeat transparent;
+							background: url(/assets/images//holiday1.png) 0 0 no-repeat transparent;
 						}
 					}
 				}
@@ -684,7 +684,7 @@ $blue:#00a2eb;
 					position: absolute;
 					width: 76px;
 					height: 70px;
-					background: url(../../../assets/images/folder.png) 0 0 no-repeat transparent;
+					background: url(/assets/images//folder.png) 0 0 no-repeat transparent;
 					top: 0;
 					left: 0;
 					z-index: 2;
@@ -891,7 +891,7 @@ $blue:#00a2eb;
 			border-radius: 3px;
 			background-color: #272c33;
 			cursor: pointer;
-			background: url(../../../assets/images/icon/ico-close.png) center center no-repeat #272c33;
+			background: url(/assets/images//icon/ico-close.png) center center no-repeat #272c33;
 			&:hover {
 				color: $blue;
 			}

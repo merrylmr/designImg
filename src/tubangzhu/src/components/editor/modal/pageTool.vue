@@ -531,7 +531,7 @@ $blue: #00a2eb;
           width: 34px;
           height: 34px;
           border-radius: 34px;
-          background: url(../../../assets/images/zoom.png) 50% 9px no-repeat
+          background: url(/assets/images//zoom.png) 50% 9px no-repeat
             transparent;
           cursor: pointer;
           margin-left: 4px;
@@ -551,7 +551,7 @@ $blue: #00a2eb;
           width: 34px;
           height: 34px;
           border-radius: 50%;
-          background: url(../../../assets/images/zoom.png) 50% -54px no-repeat transparent;
+          background: url(/assets/images//zoom.png) 50% -54px no-repeat transparent;
           cursor: pointer;
         }
         .grid {
@@ -559,7 +559,7 @@ $blue: #00a2eb;
           width: 34px;
           height: 34px;
           border-radius: 50%;
-          background: url(../../../assets/images/zoom.png) 50% -205px no-repeat transparent;
+          background: url(/assets/images//zoom.png) 50% -205px no-repeat transparent;
           cursor: pointer;
         }
         .full {
@@ -567,7 +567,7 @@ $blue: #00a2eb;
           width: 34px;
           height: 34px;
           border-radius: 50%;
-          background: url(../../../assets/images/zoom.png) 50% -131px no-repeat transparent;
+          background: url(/assets/images//zoom.png) 50% -131px no-repeat transparent;
           cursor: pointer;
           &.full2 {
             background-position: 50% -170px;
@@ -578,7 +578,7 @@ $blue: #00a2eb;
           width: 34px;
           height: 34px;
           border-radius: 50%;
-          background: url(../../../assets/images/zoom.png) 50% -236px no-repeat transparent;
+          background: url(/assets/images//zoom.png) 50% -236px no-repeat transparent;
           cursor: pointer;
         }
       }
@@ -667,7 +667,7 @@ $blue: #00a2eb;
         line-height: 1.5;
         border-bottom: 1px solid #dedede;
         padding: 12px 0 10px 55px;
-        background: url(../../../assets/images/qqq.png) 0 6px no-repeat
+        background: url(/assets/images//qqq.png) 0 6px no-repeat
           transparent;
         .p1 {
           font-size: 14px;
@@ -689,7 +689,7 @@ $blue: #00a2eb;
       &:before {
         width: 24px;
         height: 100%;
-        background: url(../../../assets/images/arrow10.png) 0 90% no-repeat
+        background: url(/assets/images//arrow10.png) 0 90% no-repeat
           transparent;
         display: block;
         position: absolute;
@@ -732,11 +732,11 @@ $blue: #00a2eb;
             vertical-align: middle;
             margin: 0 5px 5px 0;
             &.icon-qq {
-              background: url(../../../assets/images/qq.png) 0 0 no-repeat
+              background: url(/assets/images//qq.png) 0 0 no-repeat
                 transparent;
             }
             &.icon-ww {
-              background: url(../../../assets/images/ww.png) 0 0 no-repeat
+              background: url(/assets/images//ww.png) 0 0 no-repeat
                 transparent;
             }
           }

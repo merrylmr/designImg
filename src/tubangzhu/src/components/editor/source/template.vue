@@ -248,7 +248,7 @@
 					color: #fff;
 					font-size: 14px;
 					text-align: right;
-					background: url(../../../assets/images/corner.png) 50% 50% no-repeat;
+					background: url(/assets/images//corner.png) 50% 50% no-repeat;
 					transition:transform .2s ease-in-out;
 					transform:scale(0);
 					transform-origin:top right;

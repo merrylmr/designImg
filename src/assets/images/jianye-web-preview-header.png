@@ -1,0 +1,8 @@
+module.exports = __webpack_public_path__ + "static/img/jianye-web-preview-header.8fc8503.png";
+
+
+//////////////////
+// WEBPACK FOOTER
+// ./src/assets/images/jianye-web-preview-header.png
+// module id = 384
+// module chunks = 0

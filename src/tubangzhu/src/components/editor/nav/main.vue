@@ -8115,8 +8115,8 @@ export default {
                   maxBottom = bottom;
                 }
               }
-              
-             
+
+
               offsetTop = maxBottom;
           //计算缩放比例
           let ratio = this.getSvgWidth/ data.item.info.width;
@@ -8221,7 +8221,7 @@ export default {
               var page = _self.$store.state.docData.page[p];
               //console.log(page.id + '--' + thumbItem.id);
               if (page.id == thumbItem.id || page.front_id == thumbItem.id) {
-       
+
                 page.thumbnail = thumbItem.thumbnail+'?t='+timestamp;
 
               }
@@ -8864,7 +8864,7 @@ $guide-border-color: #bbbbbb; //右侧编辑器区域
       pointer-events: none;
       border: 3px solid transparent;
       &:hover {
-        border-image: url(../../../assets/images/guide-border.png) 4 4 round;
+        border-image: url(/assets/images//guide-border.png) 4 4 round;
       }
       .control {
         //控制柄元件
@@ -8965,7 +8965,7 @@ $guide-border-color: #bbbbbb; //右侧编辑器区域
       width: 100px;
       height: 100px;
       border: 3px solid transparent;
-      border-image: url(../../../assets/images/guide-border.png) 5 5 round;
+      border-image: url(/assets/images//guide-border.png) 5 5 round;
       /*border-style:inherit;*/
       pointer-events: none;
     } //辅助线
@@ -8978,7 +8978,7 @@ $guide-border-color: #bbbbbb; //右侧编辑器区域
         position: absolute;
         top: 0px;
 
-        border-image: url(../../../assets/images/guide-border.png) 5 5 round;
+        border-image: url(/assets/images//guide-border.png) 5 5 round;
 
         margin: 0;
       }
@@ -9027,12 +9027,12 @@ $guide-border-color: #bbbbbb; //右侧编辑器区域
     }
 
     .x {
-      cursor: url(./../../../assets/images/table-resize.png) 7.5 7.5, auto;
+      cursor: url(/assets/images/table-resize.png) 7.5 7.5, auto;
       width: 1px;
       height: 100%;
     }
     .y {
-      cursor: url(./../../../assets/images/table-resize-90.png) 7.5 7.5, auto;
+      cursor: url(/assets/images/table-resize-90.png) 7.5 7.5, auto;
       width: 100%;
       height: 1px;
     }
@@ -9107,7 +9107,7 @@ $guide-border-color: #bbbbbb; //右侧编辑器区域
     background: #fff;
     border-radius: 50%;
     box-shadow: 0 0 5px #aaa;
-    background: url(../../../assets/images/rotate-left.png) center center
+    background: url(/assets/images//rotate-left.png) center center
       no-repeat #fff;
   }
   .e {
@@ -9136,7 +9136,7 @@ $guide-border-color: #bbbbbb; //右侧编辑器区域
   bottom: -5px;
   width: 18px;
   height: 23px;
-  background: url(../../../assets/images/icon/ico-lock.png);
+  background: url(/assets/images//icon/ico-lock.png);
   cursor: pointer;
 }
 

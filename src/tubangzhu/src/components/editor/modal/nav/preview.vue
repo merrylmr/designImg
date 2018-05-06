@@ -166,7 +166,7 @@
 		}
 	}
 </script>
-<style lang="scss"> 
+<style lang="scss">
 	$blue:#00a2eb;
 	.preview-modal{
 		position: fixed;
@@ -197,7 +197,7 @@
 	    	&.esc{
 	    		width: 26px;
 			    height: 26px;
-			    background: url(../../../../assets/images/escfull.png) 0 0 no-repeat transparent;
+			    background: url(/assets/images/escfull.png) 0 0 no-repeat transparent;
 			    cursor: pointer;
 	    	}
 	    	&.line{
@@ -209,7 +209,7 @@
 	    	&.prev{
 	    		width: 30px;
 			    height: 30px;
-			    background: url(../../../../assets/images/prevnext.png) 0 0 no-repeat transparent;
+			    background: url(/assets/images/prevnext.png) 0 0 no-repeat transparent;
 			    background-position: 10px -28px;
 			    margin:0 5px 0 10px;
 			    cursor: pointer;
@@ -227,7 +227,7 @@
 	    	&.next{
 	    		width: 30px;
 			    height: 30px;
-			    background: url(../../../../assets/images/prevnext.png) 0 0 no-repeat transparent;
+			    background: url(/assets/images/prevnext.png) 0 0 no-repeat transparent;
 			    background-position: -65px -28px;
 			    cursor: pointer;
 			    margin-left: 5px;

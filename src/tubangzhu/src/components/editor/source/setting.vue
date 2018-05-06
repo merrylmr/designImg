@@ -304,7 +304,7 @@ export default {
       .ad-hidden {
         width: 100%;
         height: 120px;
-        background-image: url("../../../assets/images/ad-hidden-bg.png");
+        background-image: url("/assets/images//ad-hidden-bg.png");
         text-align: center;
         .not-pay {
           color: white;

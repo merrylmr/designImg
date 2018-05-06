@@ -9,7 +9,7 @@
 				ref="file"
 				multiple="multiple"
 			>
-	<span v-if="showPsdUpload" class="psd-upload" @click="onUploadPsdClick" :style="{background:color.bgColor,color:color.fontColor}">上传Photoshop文档</span>      
+	<span v-if="showPsdUpload" class="psd-upload" @click="onUploadPsdClick" :style="{background:color.bgColor,color:color.fontColor}">上传Photoshop文档</span>
 			<label for="file" :style="{background:color.bgColor,color:color.fontColor}">从电脑上选择图片</label>
 			<span class="phone-upload" @click="getUploadUrl" :style="{background:color.bgColor,color:color.fontColor}">手机上传</span>
   	</form>
@@ -516,7 +516,7 @@ export default {
         display: inline;
         width: 10px;
         height: 9px;
-        background: url(../../../assets/images/close.png) 0 0 no-repeat
+        background: url(/assets/images//close.png) 0 0 no-repeat
           transparent;
         margin-top: 5px;
         margin-left: 5px;

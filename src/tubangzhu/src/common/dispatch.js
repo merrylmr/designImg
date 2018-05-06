@@ -38,8 +38,8 @@ var elementurl = {
 	'table': '/editor/getMaterial4/query/t-15-c--p-1.html',
 };
 var foldUrl = '/editor/getMemberGoodsFolder.html';
-var backgroundUrl = '/editor/getMaterial4/query/t-98-p-1.html';
-var searchUrl = '/editor/getMaterial4/query/k-key-p-1.html'
+var backgroundUrl = 'http://www.tubangzhu.com/editor/getMaterial4/query/t-98-p-1.html';
+var searchUrl = 'http://www.tubangzhu.com/editor/getMaterial4/query/k-key-p-1.html'
 var socketConnect = '/api/connection/create?tpl_id=0&tpl_mode=3&user_id=0&user_mode=0';
 var favMaterial = '/editor/saveMaterial.html';
 var uploadedFileUrl = '/editor/getUserMaterial4/query/s-8-p-1.html';

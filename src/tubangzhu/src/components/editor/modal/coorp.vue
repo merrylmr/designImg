@@ -54,7 +54,7 @@ $blue:#00a2eb;
     top:15px;
     right: 13px;
     cursor:pointer;
-    background: url(../../../assets/images/icon/ico-close.png) no-repeat center center;
+    background: url(/assets/images//icon/ico-close.png) no-repeat center center;
   }
   .link-wrap{
     padding: 22px 0 15px 22px;

@@ -622,13 +622,13 @@ $blue: #00a2eb;
     width: 19px;
     height: 89px;
     margin-top: -44.5px;
-    background: url(../../../assets/images/icon/ico-turn1.png) no-repeat 0 0;
+    background: url(/assets/images//icon/ico-turn1.png) no-repeat 0 0;
     transform: scaleX(-1);
     color: #fff;
     cursor: pointer;
     z-index: 50;
     &.turnoff {
-      background: url(../../../assets/images/icon/ico-turn2.png) no-repeat 0 0;
+      background: url(/assets/images//icon/ico-turn2.png) no-repeat 0 0;
     }
   }
   .title {
@@ -716,7 +716,7 @@ $blue: #00a2eb;
       width: 38px;
       height: 17px;
       line-height: 17px;
-      // background: url(../../../assets/images/op-ico.png) 0 0 no-repeat;
+      // background: url(/assets/images//op-ico.png) 0 0 no-repeat;
       background-color: rgba(0, 0, 0, 0.3);
       text-align: center;
       color: #fff;

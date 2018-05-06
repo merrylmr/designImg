@@ -2,7 +2,7 @@
   <div class="sale-action" v-if="show" @mousedown.stop="">
       <span class="close" @click="onClose">×</span>
       <div class="top_half">
-          <img src="../../../assets/images/coupon_ticket.png" alt="">
+          <img src="/assets/images//coupon_ticket.png" alt="">
           <div class="text">下单印刷立享9.5折，限时优惠，等你来领！</div>
       </div>
       <div class="btn_box">

@@ -4,7 +4,7 @@
 		<span class="close" @click="closeModal"><i class="tbzico ico-close"></i></span>
 		<div class="title"><i class="tbzico ico-skin"></i>皮肤颜色</div>
 		<ul >
-				<li v-for="(color,index) in colorData.colorList" 
+				<li v-for="(color,index) in colorData.colorList"
 				:class="{active:color==colorData.themeColor&&!colorData.isDiy}"
 				:style="{backgroundColor:color}"
 				@click="pickColor(color)">
@@ -16,7 +16,7 @@
 			<Picker :bindcolor="colorData.diyColor" @onChange="onChangeColor"/>
 			<span class="sure" @click="sureDiy">确定</span>
 		</div>
-		
+
 	</div>
 	</transition>
 </template>
@@ -53,7 +53,7 @@
 						this.$store.commit('themeColor',{themeColor:color,isDiy:false})
 					}
 				})
-				
+
 			},
 			onChangeColor(color){
 				this.$store.commit('themeColor',{themeColor:color,isDiy:true,diyColor:color})
@@ -102,7 +102,7 @@
 					i{display: block;}
 				}
 				&.diycolor{
-					background: url(../../../assets/images/diycolor.png);
+					background: url(/assets/images//diycolor.png);
 				}
 			}
 		}

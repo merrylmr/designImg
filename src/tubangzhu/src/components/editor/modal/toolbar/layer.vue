@@ -47,7 +47,7 @@ export default {
       width: 20px;
       height: 20px;
       cursor: pointer;
-      background: url(../../../../assets/images/icon/ico-layer.png) no-repeat 0
+      background: url(/assets/images/icon/ico-layer.png) no-repeat 0
         0;
     }
     &.item2 i {

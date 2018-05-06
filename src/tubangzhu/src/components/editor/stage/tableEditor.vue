@@ -750,7 +750,7 @@ export default {
 			.item-menu {
 				width: 15px;
 				height: 15px;
-				background: url('../../../assets/images/arrow12.png') no-repeat 3px 5px;
+				background: url('/assets/images//arrow12.png') no-repeat 3px 5px;
 				border: 1px solid transparent;
 				position: absolute;
 				left: 50%;
@@ -770,7 +770,7 @@ export default {
 			width: 5px;
 			margin-left: -2.5px;
 			background: transparent;
-			cursor: url(./../../../assets/images/table-resize.png) 7.5 7.5, auto;
+			cursor: url(/assets/images/table-resize.png) 7.5 7.5, auto;
 		}
 	}
 	.row-controller {
@@ -789,7 +789,7 @@ export default {
 			.item-menu {
 				width: 15px;
 				height: 15px;
-				background: url('../../../assets/images/arrow13.png') no-repeat 5px 3px;
+				background: url('/assets/images//arrow13.png') no-repeat 5px 3px;
 				border: 1px solid transparent;
 				position: absolute;
 				left: 50%;
@@ -810,11 +810,11 @@ export default {
 			margin-top: -2.5px;
 			background: transparent;
 			margin-left: -24px;
-			cursor: url(./../../../assets/images/table-resize-90.png) 7.5 7.5, auto;
+			cursor: url(/assets/images/table-resize-90.png) 7.5 7.5, auto;
 		}
 	}
 	.add-col {
-		background: url('../../../assets/images/addcell.png') no-repeat;
+		background: url('/assets/images//addcell.png') no-repeat;
 		right: 0;
 		top: 0;
 		margin-top: -26px;
@@ -829,7 +829,7 @@ export default {
 		}
 	}
 	.add-row {
-		background: url('../../../assets/images/addcell90.png') no-repeat;
+		background: url('/assets/images//addcell90.png') no-repeat;
 		margin-left: -26px;
 		margin-bottom: -15px;
 		bottom: 0;

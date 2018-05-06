@@ -1,15 +1,32 @@
-// The Vue build version to load with the `import` command
-// (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import App from './App'
-import router from './router'
+import router from './common/router'
+import VueResource from 'vue-resource'
+import store from './common/store'
 
-Vue.config.productionTip = false
+import clipboard from 'vue-clipboards' //复制到剪切板
 
-/* eslint-disable no-new */
-new Vue({
+Vue.use(clipboard)
+Vue.use(store)
+Vue.use(VueResource)
+require('./assets/css/reset.css');
+require('./assets/css/iconfont/iconfont.css');
+Vue.config.productionTip = false;
+//Vue.config.warnHandler = function (err, vm, info) {};
+
+const vue = new Vue({
   el: '#app',
   router,
-  components: { App },
-  template: '<App/>'
+  store,
+  VueResource,
+  template: '<App/>',
+  components: {
+    App
+  },
+  socket: {}
 })
+window.vue = vue;
+
+
+// WEBPACK FOOTER //
+// ./src/main.js

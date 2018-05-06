@@ -63,10 +63,10 @@ $blue:#00a2eb;
 	    	width: 28px;
 	    	height: 28px;
 	    	&.tbz-danger{
-	    		background: url(../../../assets/images/tbz-danger.png) center center no-repeat;
+	    		background: url(/assets/images//tbz-danger.png) center center no-repeat;
 	    	}
 	    	&.tbz-ok{
-	    		background: url(../../../assets/images/tbz-ok.png) center center no-repeat;
+	    		background: url(/assets/images//tbz-ok.png) center center no-repeat;
 	    	}
 	    }
 	    .title{

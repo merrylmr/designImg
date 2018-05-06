@@ -71,7 +71,7 @@ export default {
 		float: left;
 		width: 30px;
 		height: 30px;
-		background: url(../../../assets/images/icon/ico-filter.png) no-repeat 3px 50%;
+		background: url(/assets/images//icon/ico-filter.png) no-repeat 3px 50%;
 	}
 }
 </style>

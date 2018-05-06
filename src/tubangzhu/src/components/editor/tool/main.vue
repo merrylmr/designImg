@@ -287,10 +287,10 @@ $padding: 8px;
         position: relative;
       }
       &.common-ico {
-        background: url(../../../assets/images/icon/ico4.png) no-repeat 0 50%;
+        background: url(/assets/images//icon/ico4.png) no-repeat 0 50%;
       }
       &.text-ico {
-        background: url(../../../assets/images/icon/ico-text.png) no-repeat 0
+        background: url(/assets/images//icon/ico-text.png) no-repeat 0
           50%;
       }
       &:before {
@@ -411,7 +411,7 @@ $padding: 8px;
         }
       } //框选对齐样式
       &.galign-ico {
-        background: url(../../../assets/images/icon/ico-groupAlign.png)
+        background: url(/assets/images//icon/ico-groupAlign.png)
           no-repeat 0 50%;
       }
       &.ico-gl {

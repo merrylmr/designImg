@@ -450,7 +450,7 @@ $blue: #00a2eb;
           right: 10px;
           width: 28px;
           height: 28px;
-          background: url(../../../assets/images/icon/ico-selected.png)
+          background: url(/assets/images//icon/ico-selected.png)
             no-repeat 50% 50% rgba(0, 0, 0, 0.67);
           border-radius: 50%;
           display: none;
@@ -467,10 +467,10 @@ $blue: #00a2eb;
             width: 82px;
             height: 82px;
             border: 1px dashed #7a7a7a;
-            background: url(../../../assets/images/icon/ico-add.png) 50% 30%
+            background: url(/assets/images//icon/ico-add.png) 50% 30%
               no-repeat #32373e;
             &:hover {
-              background: url(../../../assets/images/icon/ico-add2.png) 50% 30%
+              background: url(/assets/images//icon/ico-add2.png) 50% 30%
                 no-repeat #32373e;
               color: #b7b7b7;
             }
@@ -518,7 +518,7 @@ $blue: #00a2eb;
               right: 10px;
               width: 28px;
               height: 28px;
-              background: url(../../../assets/images/icon/ico-selected.png)
+              background: url(/assets/images//icon/ico-selected.png)
                 no-repeat 50% 50% rgba(0, 0, 0, 0.67);
               border-radius: 50%;
               display: none;

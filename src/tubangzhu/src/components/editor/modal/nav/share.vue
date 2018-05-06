@@ -99,8 +99,8 @@
 				if(data.error==0){_self.shareInfo.url = data.data.url;}
 			},data);
 			})
-			
-			
+
+
 		}
 	}
 </script>
@@ -121,7 +121,7 @@
 		    a{
 		    	width: 38px;
 			    height: 38px;
-			    background: url(../../../../assets/images/share.png) 0 0 no-repeat transparent;
+			    background: url(/assets/images/share.png) 0 0 no-repeat transparent;
 			    display: inline-block;
 			    margin-right: 15px;
 			    &.weixin{background-position: -54px 0;}

@@ -441,7 +441,7 @@ export default {
         height: 18px;
         margin-left: 9px;
         margin-top: 35px;
-        background: url(../../../../assets/images/next.png) no-repeat 0 0;
+        background: url(/assets/images/next.png) no-repeat 0 0;
         &:hover {
           opacity: 0.5;
         }
