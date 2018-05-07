@@ -58,7 +58,33 @@ var socket = {
             tpl_extra_str += '&tpl_extra[' + k + ']=' + tpl_extra[k];
         }
 
-      let result={"error":0,"data":{"conn_id":1531957,"uid":187438,"username":"lmr","userFace":"http://image.tubangzhu.com/uploads/face/187438_180.png","tpl_id":"1079550","tpl_mode":0,"team_id":0,"coop_id":0,"coop_name":"","coop_service":{"qq":"","ww":""},"open_id":0,"open_url":"","open_on_finish":"insert","refresh_url":"http://www.tubangzhu.com/diy4/1079550/0/","team_color":[],"theme_color":"#cfbaaa","theme_diy_color":"#00a2eb","theme_color_is_diy":false,"theme_color_list":["#00a2eb","#288add","#31a66b","#da434e","#e56281","#b1639f","#6b51c0","#595ca0","#3074c1","#00829a","#159c77","#4fb0ac","#7ac5c4","#9bb7d6","#804d4d","#f0bc59","#cfbaaa"],"socket_server":"//socket.tubangzhu.com","socket_api_server":"http://socket-api.tubangzhu.com:8090","access_token":"XfelZjw3VHYE87GrxrTcJPq4Y2-A6tGp","admin_level":0},"msg":"OK","apiVersion":"v0","coopId":0,"product":"tubangzhu"};
+      let result={"error":0,
+        "data":{"conn_id":1531957,
+          "uid":187438,
+          "username":"lmr",
+          "userFace":"http://image.tubangzhu.com/uploads/face/187438_180.png",
+          "tpl_id":"1079550",
+          "tpl_mode":0,
+          "team_id":0,
+          "coop_id":0,
+          "coop_name":"",
+          "coop_service":{"qq":"","ww":""},
+          "open_id":0,
+          "open_url":"",
+          "open_on_finish":"insert",
+          "refresh_url":"http://www.tubangzhu.com/diy4/1079550/0/",
+          "team_color":[],
+          "theme_color":"#cfbaaa",
+          "theme_diy_color":"#00a2eb",
+          "theme_color_is_diy":false,
+          "theme_color_list":["#00a2eb","#288add","#31a66b","#da434e","#e56281","#b1639f","#6b51c0","#595ca0","#3074c1","#00829a","#159c77","#4fb0ac","#7ac5c4","#9bb7d6","#804d4d","#f0bc59","#cfbaaa"],
+          "socket_server":"//socket.tubangzhu.com",
+          "socket_api_server":"http://socket-api.tubangzhu.com:8090",
+          "access_token":"XfelZjw3VHYE87GrxrTcJPq4Y2-A6tGp",
+          "admin_level":0},"msg":"OK",
+        "apiVersion":"v0",
+        "coopId":0,
+        "product":"tubangzhu"};
 
       if (result.error == 0) {
         //console.log('socketinit');
@@ -727,5 +753,3 @@ var _socket = socket;
 export default socket;
 
 
-// WEBPACK FOOTER //
-// ./src/common/socket.js

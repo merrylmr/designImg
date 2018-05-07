@@ -531,7 +531,7 @@ $blue: #00a2eb;
           width: 34px;
           height: 34px;
           border-radius: 34px;
-          background: url(/assets/images/zoom.png) 50% 9px no-repeat
+          background: url('http://www.tubangzhu.com/diy4/static/img/zoom.1fed72c.png') 50% 9px no-repeat
             transparent;
           cursor: pointer;
           margin-left: 4px;
@@ -551,7 +551,7 @@ $blue: #00a2eb;
           width: 34px;
           height: 34px;
           border-radius: 50%;
-          background: url(/assets/images/zoom.png) 50% -54px no-repeat transparent;
+          background: url('http://www.tubangzhu.com/diy4/static/img/zoom.1fed72c.png') 50% -54px no-repeat transparent;
           cursor: pointer;
         }
         .grid {
@@ -559,7 +559,7 @@ $blue: #00a2eb;
           width: 34px;
           height: 34px;
           border-radius: 50%;
-          background: url(/assets/images/zoom.png) 50% -205px no-repeat transparent;
+          background: url('http://www.tubangzhu.com/diy4/static/img/zoom.1fed72c.png') 50% -205px no-repeat transparent;
           cursor: pointer;
         }
         .full {
@@ -567,7 +567,7 @@ $blue: #00a2eb;
           width: 34px;
           height: 34px;
           border-radius: 50%;
-          background: url(/assets/images/zoom.png) 50% -131px no-repeat transparent;
+          background: url('http://www.tubangzhu.com/diy4/static/img/zoom.1fed72c.png') 50% -131px no-repeat transparent;
           cursor: pointer;
           &.full2 {
             background-position: 50% -170px;
@@ -578,7 +578,7 @@ $blue: #00a2eb;
           width: 34px;
           height: 34px;
           border-radius: 50%;
-          background: url(/assets/images/zoom.png) 50% -236px no-repeat transparent;
+          background: url('http://www.tubangzhu.com/diy4/static/img/zoom.1fed72c.png') 50% -236px no-repeat transparent;
           cursor: pointer;
         }
       }

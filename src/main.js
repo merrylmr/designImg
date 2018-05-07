@@ -1,16 +1,21 @@
-import Vue from 'vue'
-import App from './App'
-import router from './common/router'
-import VueResource from 'vue-resource'
-import store from './common/store'
+import Vue from 'vue';
+import App from './App';
+import router from './common/router';
+import VueResource from 'vue-resource';
+import store from './common/store';
 
 import clipboard from 'vue-clipboards' //复制到剪切板
 
-Vue.use(clipboard)
-Vue.use(store)
-Vue.use(VueResource)
+Vue.use(clipboard);
+Vue.use(store);
+Vue.use(VueResource);
+require('./assets/css/index.css');
+
 require('./assets/css/reset.css');
 require('./assets/css/iconfont/iconfont.css');
+
+require('./assets/css/font-awesome.min.css');
+
 Vue.config.productionTip = false;
 //Vue.config.warnHandler = function (err, vm, info) {};
 

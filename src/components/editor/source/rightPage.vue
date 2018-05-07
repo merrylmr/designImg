@@ -622,13 +622,13 @@ $blue: #00a2eb;
     width: 19px;
     height: 89px;
     margin-top: -44.5px;
-    background: url(/assets/images/icon/ico-turn1.png) no-repeat 0 0;
+    background: url("http://www.tubangzhu.com/diy4/static/img/ico-turn1.c09ff08.png") no-repeat 0 0;
     transform: scaleX(-1);
     color: #fff;
     cursor: pointer;
     z-index: 50;
     &.turnoff {
-      background: url(/assets/images/icon/ico-turn2.png) no-repeat 0 0;
+      background: url("http://www.tubangzhu.com/diy4/static/img/ico-turn2.1d10430.png") no-repeat 0 0;
     }
   }
   .title {

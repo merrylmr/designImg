@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import $ from 'jquery';
 var dispatch = new Vue()
-var textUrl = '/editor/getMaterial4/query/t-99-p-1.html';
+var textUrl = 'http://www.tubangzhu.com/editor/getMaterial4/query/t-99-p-1.html';
 var elementurl = {
 	//我的素材
 	'myel': '/editor/getUserMaterial4/query/s-101-p-1.html',
