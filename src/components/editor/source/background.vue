@@ -450,7 +450,7 @@ $blue: #00a2eb;
           right: 10px;
           width: 28px;
           height: 28px;
-          background: url(/assets/images/icon/ico-selected.png)
+          background: url('http://www.tubangzhu.com/diy4/static/img/ico-selected.ff65d65.png')
             no-repeat 50% 50% rgba(0, 0, 0, 0.67);
           border-radius: 50%;
           display: none;

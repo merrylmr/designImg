@@ -52,6 +52,7 @@
       };
       //interaction 交互组件数据接受接口
       window.sendInteractionMsg = function(id, data) {
+        console.log('svgItemSelected',id);
         //获取元素对象
         let element = undefined;
         _self.$store.state.docData.page.forEach(pageItem => {
@@ -123,7 +124,3 @@
     }*/
 </style>
 
-
-
-// WEBPACK FOOTER //
-// App.vue?19de8e5f

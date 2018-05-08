@@ -1,7 +1,12 @@
 <template>
-	<div class="stageArea" id="stageArea" ref="stageArea" data-noselect :style="getStageAreaStyle" @mousedown="stageAreaMouseDown" @mousewheel="pageScroll">
+	<div class="stageArea" id="stageArea" ref="stageArea" data-noselect
+       :style="getStageAreaStyle"
+       @mousedown="stageAreaMouseDown"
+       @mousewheel="pageScroll">
 		<!--svg舞台-->
-		<div id="stage_canvas" class="stage" ref="stage" :style="stageCanvasStyle" data-noselect @dragover.prevent="handleDragover('stage')" @drop="handleDrop('stage')" >
+		<div id="stage_canvas" class="stage" ref="stage" :style="stageCanvasStyle" data-noselect
+         @dragover.prevent="handleDragover('stage')"
+         @drop="handleDrop('stage')" >
 			<!-- svg画布 -->
 			<svg id="svg_canvas" ref="svg_canvas" data-noselect :viewBox="'0 0 '+getSvgWidth+' '+getSvgHeight" :width="getSvgWidth*getZoom" :height="getSvgHeight*getZoom" preserveAspectRatio="none" :style="{background:getNowPageData.edit_config.backgroundColor}" version="1.1" xmlns="http://www.w3.org/2000/svg">
 				<!--滤镜-->
@@ -1153,8 +1158,10 @@ export default {
 		*/
     handleSvgMouseenter(item) {
       this.hoverElement = item;
+      console.log('mouseenter');
     },
     handleSvgMouseleave(item) {
+      console.log('mouseLeave');
       this.hoverElement = null;
       if (this.shiftIsDown) {
         return;
@@ -1166,6 +1173,7 @@ export default {
 		 *item:container对象(target=stage时，item=undefined)
 		 */
     handleDragover(target, item) {
+      console.log('dragOver');
       this.$store.state.editor.dragEvent.overTarget = target;
       var drag = this.$store.state.editor.dragEvent;
       if (
@@ -1226,6 +1234,7 @@ export default {
 		 *item:container对象(target=stage时，item=undefined)
 		 */
     handleDrop(target, item) {
+      console.log('handleDrop');
       if (
         target == "contain" &&
         this.$store.state.editor.dragEvent.type == "image" &&
@@ -5053,6 +5062,7 @@ export default {
       }
     },
     stageAreaMouseMove(e) {
+      console.log('mouseMove');
       //如果表格正在编辑,返回
       var controlPoint = this.$store.state.stage.mouse.controlPoint;
       if (this.$store.state.stage.mouse.isDown) {
@@ -6012,6 +6022,7 @@ export default {
       eventBus.$emit("stageMouseUp");
     },
     svgItemSelected(item) {
+      console.log('mousesDown');
       // console.log(this.getNowPageData.edit_config.groups.map(item=>{
       // 	return item.join(' ')
       // }).join('\n'));
@@ -8252,6 +8263,7 @@ export default {
       var _self = this;
       //接收到模板数据
       eventBus.$on("socket_templateInfo", function(data) {
+        console.log('on+socket_templateInfo');
         if (_self.$store.state.editor.lastDisconnect) {
           return;
         }
@@ -8262,7 +8274,7 @@ export default {
         var docData = JSON.parse(JSON.stringify(data));
 
         console.log('docData:');
-        console.log(docData);
+        console.log(docData.isAdv);
 
         //如果是简页产品且singlePageConfig没有设置,则进行设置
         if (docData.product == "jianye") {

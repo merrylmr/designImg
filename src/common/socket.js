@@ -751,8 +751,8 @@ var socket = {
             //location.reload();
         }
     }
-}
-var _socket = socket;
+};
+var _socket=socket;
 export default socket;
 
 
