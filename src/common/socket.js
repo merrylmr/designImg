@@ -248,6 +248,9 @@ var socket = {
             .state
             .io
             .on('fileUploaded', function (data) {
+              console.log('fileUploaded:');
+              console.log(data)
+
                 _self.state.vue.$store.state.editor.uploadPush = data;
             });
         this

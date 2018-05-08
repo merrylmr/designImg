@@ -341,6 +341,3 @@ function loadImage(data) {
 
 export default dispatch
 
-
-// WEBPACK FOOTER //
-// ./src/common/dispatch.js

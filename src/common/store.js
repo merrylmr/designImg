@@ -717,7 +717,7 @@ const store = new Vuex.Store({
                     var eventType = '';
                     if (snapItem.name == "elementChange") {
                         //遍历目标
-                        var pageIndex
+                        var pageIndex=-1;
                         for (var i = 0; i < snapItem.targets.length; i++) {
 
                             //获取快照内的元素对象
@@ -730,7 +730,6 @@ const store = new Vuex.Store({
                             // pageIndex = -1;
 
                             for (var p = 0; p < state.docData.page.length; p++) {
-
                                 for (var e = 0; e < state.docData.page[p].data.length; e++) {
 
                                     if (newData.id == state.docData.page[p].data[e].id) {
@@ -741,19 +740,6 @@ const store = new Vuex.Store({
                                     }
                                 }
                             }
-
-                            var newData = JSON.parse(snapTarget.newData);
-
-                            pageIndex = -1;
-                            state
-                                .docData
-                                .page
-                                .forEach((item, index) => {
-                                    if (newData.page_id == item.id) {
-                                        pageIndex = index;
-                                        console.log('找到pageIndex', index);
-                                    }
-                                })
 
                             if (snapItem.type == 'add') {
 
@@ -767,7 +753,7 @@ const store = new Vuex.Store({
                                 for (var a = 0; a < state.docData.page[pageIndex].data.length; a++) {
                                     state.docData.page[pageIndex].data[a].index = a;
                                 }
-                                eventBus.$emit('updateItemHtml', target)
+                                eventBus.$emit('updateItemHtml', target);
 
                                 eventType = 'remove';
                             } else if (snapItem.type == 'remove') {
@@ -1206,7 +1192,3 @@ const store = new Vuex.Store({
     }
 });
 export default store
-
-
-// WEBPACK FOOTER //
-// ./src/common/store.js

@@ -14,8 +14,3 @@ export default new Router({
     }
   ]
 })
-
-
-
-// WEBPACK FOOTER //
-// ./src/common/router.js

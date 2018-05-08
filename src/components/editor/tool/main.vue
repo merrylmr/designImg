@@ -411,7 +411,7 @@ $padding: 8px;
         }
       } //框选对齐样式
       &.galign-ico {
-        background: url(/assets/images/icon/ico-groupAlign.png)
+        background: url('http://www.tubangzhu.com/diy4/static/img/ico-groupAlign.87c8762.png')
           no-repeat 0 50%;
       }
       &.ico-gl {

@@ -8,7 +8,18 @@
 				<defs v-html="getFilterText"></defs>
 
 				<!--元素-->
-				<g v-for="(item,index) in getElements" :id="item.id" :ref="item.id" :key="item.id" :transform="getTransformString(item,false)" :style="getElementStyle(item)"  :filter="item.edit_config.style.shadow.use?'url(#filter_shadow_'+item.id+')':''" v-show="item.edit_config.visible" @mouseenter="handleSvgMouseenter(item)" @mouseleave="handleSvgMouseleave(item)" @mousedown="svgItemSelected(item)" @dblclick="svgItemdblClick(item,arguments[0])" @dragover.prevent.stop="handleDragover('contain',item)" @drop.stop="handleDrop('contain',item)">
+				<g v-for="(item,index) in getElements"
+           :id="item.id" :ref="item.id" :key="item.id"
+           :transform="getTransformString(item,false)"
+           :style="getElementStyle(item)"
+           :filter="item.edit_config.style.shadow.use?'url(#filter_shadow_'+item.id+')':''"
+           v-show="item.edit_config.visible"
+           @mouseenter="handleSvgMouseenter(item)"
+           @mouseleave="handleSvgMouseleave(item)"
+           @mousedown="svgItemSelected(item)"
+           @dblclick="svgItemdblClick(item,arguments[0])"
+           @dragover.prevent.stop="handleDragover('contain',item)"
+           @drop.stop="handleDrop('contain',item)">
 					<!--普通元素-->
 					<g v-if="item.type!='interaction'" v-html="item.html"></g>
 					<!--交互组件-->
@@ -564,6 +575,8 @@ export default {
       hitRect.y = y;
 
       var hitResult = svgCanvas.getIntersectionList(hitRect, null);
+      console.log(hitResult);
+
       var hitList = [];
       var lockList = [];
       for (var i = 0; i < hitResult.length; i++) {
@@ -8248,6 +8261,9 @@ export default {
         //docData预处理,添加前端可识别的数据
         var docData = JSON.parse(JSON.stringify(data));
 
+        console.log('docData:');
+        console.log(docData);
+
         //如果是简页产品且singlePageConfig没有设置,则进行设置
         if (docData.product == "jianye") {
           if (docData.edit_config.singlePageConfig == undefined) {
@@ -8383,12 +8399,10 @@ export default {
             e.data,
             _self.$store.state.docData.edit_config
           );
-          //console.log('resultData',resultData);
-          //遍历页面元素,如果visible=true,则改为false
-          /*for(var i in resultData){
-						console.log('resultData[i]',resultData[i]);
-						//resultData[i].edit_config.visible = false;
-          }*/
+
+          console.log('resultData:');
+          console.log(resultData);
+
           if(_self.getNowPageData.edit_config.groups==undefined){
             _self.getNowPageData.edit_config.groups=[]
           }
@@ -8404,9 +8418,6 @@ export default {
           docData.page[0].loaded = true;
           _self.$store.state.editor.tplLoaded = true;
           //生成当前页svg
-          // _self.$nextTick(function() {
-          // 	_self.updateNowPageSVG();
-          // })
           _self.updateAllItemsHtml();
         });
         //console.log('page门',docData.page);
@@ -8488,7 +8499,7 @@ export default {
 
       //创建快照
       if (e.snap == undefined || e.snap == true) {
-        this.$store.commit("addDocSnap", {
+        this.$store.commit("    ", {
           name: "elementChange",
           type: e.type,
           targets: e.targets,
@@ -9107,7 +9118,7 @@ $guide-border-color: #bbbbbb; //右侧编辑器区域
     background: #fff;
     border-radius: 50%;
     box-shadow: 0 0 5px #aaa;
-    background: url(/assets/images/rotate-left.png) center center
+    background: url('http://www.tubangzhu.com/diy4/static/img/rotate-left.d17e641.png') center center
       no-repeat #fff;
   }
   .e {
@@ -9136,7 +9147,7 @@ $guide-border-color: #bbbbbb; //右侧编辑器区域
   bottom: -5px;
   width: 18px;
   height: 23px;
-  background: url(/assets/images/icon/ico-lock.png);
+  background: url('http://www.tubangzhu.com/diy4/static/img/ico-lock.c662223.png');
   cursor: pointer;
 }
 

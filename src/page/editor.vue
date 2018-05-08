@@ -243,7 +243,3 @@ export default {
 };
 </script>
 
-
-
-// WEBPACK FOOTER //
-// editor.vue?4c32a911
