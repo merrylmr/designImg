@@ -4,11 +4,18 @@
        @mousedown="stageAreaMouseDown"
        @mousewheel="pageScroll">
 		<!--svg舞台-->
-		<div id="stage_canvas" class="stage" ref="stage" :style="stageCanvasStyle" data-noselect
+		<div id="stage_canvas" class="stage" ref="stage" :style="stageCanvasStyle"
+         data-noselect
          @dragover.prevent="handleDragover('stage')"
          @drop="handleDrop('stage')" >
 			<!-- svg画布 -->
-			<svg id="svg_canvas" ref="svg_canvas" data-noselect :viewBox="'0 0 '+getSvgWidth+' '+getSvgHeight" :width="getSvgWidth*getZoom" :height="getSvgHeight*getZoom" preserveAspectRatio="none" :style="{background:getNowPageData.edit_config.backgroundColor}" version="1.1" xmlns="http://www.w3.org/2000/svg">
+			<svg id="svg_canvas" ref="svg_canvas" data-noselect
+           :viewBox="'0 0 '+getSvgWidth+' '+getSvgHeight"
+           :width="getSvgWidth*getZoom"
+           :height="getSvgHeight*getZoom"
+           preserveAspectRatio="none"
+           :style="{background:getNowPageData.edit_config.backgroundColor}"
+           version="1.1" xmlns="http://www.w3.org/2000/svg">
 				<!--滤镜-->
 				<defs v-html="getFilterText"></defs>
 
@@ -790,17 +797,6 @@ export default {
         canvaWidth = this.getSvgWidth * this.getZoom,
         canvaHeight = this.getSvgHeight * this.getZoom;
 
-      /*//计算stageAreaWidth
-			if (this.isSourceOpen && this.isPageOpen) {
-				diffWidth += 309 + 154;
-			} else if (this.isSourceOpen && !this.isPageOpen) {
-				diffWidth += 309;
-			} else if (!this.isSourceOpen && this.isPageOpen) {
-				diffWidth += 154;
-			} else {
-				diffWidth += 0;
-			}*/
-
       this.$nextTick(() => {
         //stageAreaWidth = $(window).width() - diffWidth;
         stageAreaWidth = $("#stageArea")[0].getBoundingClientRect().width;
@@ -1158,10 +1154,8 @@ export default {
 		*/
     handleSvgMouseenter(item) {
       this.hoverElement = item;
-      console.log('mouseenter');
     },
     handleSvgMouseleave(item) {
-      console.log('mouseLeave');
       this.hoverElement = null;
       if (this.shiftIsDown) {
         return;
@@ -4950,9 +4944,12 @@ export default {
     //事件=============================
 
     stageAreaMouseDown(e) {
+        console.log('stageAreaMouseDown')
       this.hoverElement = null;
 
       var dataset = $(e.target).data("noselect");
+      console.log('dataset:');
+      console.log(dataset);
       //关闭文本编辑框
       if (dataset != undefined) {
         this.stopTextEdit();
@@ -4973,6 +4970,8 @@ export default {
       }
 
       var cp = this.$store.state.stage.mouse.controlPoint;
+      console.log('this.getSelectionBox:');
+      console.log(this.getSelectionBox);
       //计算当前选择的物体的相对坐标
       if (this.getSelectionBox.items.length > 1) {
         //选择了多个元素,selctionbox的clientRect
@@ -5062,7 +5061,6 @@ export default {
       }
     },
     stageAreaMouseMove(e) {
-      console.log('mouseMove');
       //如果表格正在编辑,返回
       var controlPoint = this.$store.state.stage.mouse.controlPoint;
       if (this.$store.state.stage.mouse.isDown) {
@@ -5073,9 +5071,10 @@ export default {
         var mousePy = Math.abs(this.getMouse.y - this.getMouse.downY);
         if (this.getSelectedItems.length > 0 && (mousePx > 1 || mousePy > 1)) {
           this.moved = true;
-          //console.warn('moved!',this.moved);
         }
 
+        /*console.log('getSelectedItem');
+        console.log(this.getSelectedItem);*/
         if (
           this.getSelectedItem != null &&
           controlPoint == "" &&
@@ -6022,11 +6021,6 @@ export default {
       eventBus.$emit("stageMouseUp");
     },
     svgItemSelected(item) {
-      console.log('mousesDown');
-      // console.log(this.getNowPageData.edit_config.groups.map(item=>{
-      // 	return item.join(' ')
-      // }).join('\n'));
-
       this.guides.movingItem = undefined;
       this.hoverElement = null;
       //清空状态，修复图片从列表拖到容器上面又放回去，回舞台点击容器会删除容器的bug
@@ -6152,7 +6146,7 @@ export default {
             this.updateSelectionBoxPositionAndSize();
           }
         } else {
-          //判断是否���于编组元素
+          //判断是否属于编组元素
           let groupObject = null;
           this.getNowPageData.edit_config.groups.forEach(groupItem => {
             groupItem.forEach(groupEleItem => {
@@ -8264,6 +8258,7 @@ export default {
       //接收到模板数据
       eventBus.$on("socket_templateInfo", function(data) {
         console.log('on+socket_templateInfo');
+        //socket断开链接
         if (_self.$store.state.editor.lastDisconnect) {
           return;
         }
@@ -8274,7 +8269,10 @@ export default {
         var docData = JSON.parse(JSON.stringify(data));
 
         console.log('docData:');
-        console.log(docData.isAdv);
+        console.log(docData);
+        console.log(docData.page[0].data);
+
+        localStorage.setItem('docData',JSON.stringify(docData));
 
         //如果是简页产品且singlePageConfig没有设置,则进行设置
         if (docData.product == "jianye") {
@@ -8405,6 +8403,8 @@ export default {
           uid: _self.$store.state.editor.uid
         };
         socket.editorEmit("pageElements", params, function(e) {
+            console.log('pageElements:');
+            console.log(e);
           //console.log('第一页元素载入成功',e);
           //预处理传回的元素,将纯文本转换为对应属性的值
           var resultData = common.formatElementData(
@@ -8414,6 +8414,7 @@ export default {
 
           console.log('resultData:');
           console.log(resultData);
+          localStorage.setItem('resultData',JSON.stringify(resultData));
 
           if(_self.getNowPageData.edit_config.groups==undefined){
             _self.getNowPageData.edit_config.groups=[]
@@ -8606,6 +8607,7 @@ export default {
     },
     //编辑器状态监听
     stateChangeHandle(e) {
+      console.log('stateChange:stage main');
       if (e.step == undefined) {
         e.step = true;
       }
@@ -8829,32 +8831,7 @@ export default {
       })
     })
 
-    //监听elementCreate,elementUpdate,templateSave请求,检测返回的interaction
-    /*eventBus.$on('socket_elementCreate',this.onElementSocketRequest)
-		eventBus.$on('socket_elementUpdate',this.onElementSocketRequest)
-		eventBus.$on('socket_templateSave',this.onElementSocketRequest)*/
 
-    //生成缩略图
-    /*setInterval(function(){
-			//更新当前页缩略图
-			_self.$nextTick(function() {
-				if(_self.updateThumbnail){
-					_self.updateThumbnail = false;
-					_self.updateNowPageSVG();
-				}
-			})
-		},5000);
-
-		//定时更新模板缩略图
-		setInterval(function(){
-			if(_self.updateThumbnail && _self.$store.state.editor.autoSave){
-				var params = {
-					uid:_self.$store.state.editor.uid,
-					tpl_id:_self.$store.state.docData.id,
-				};
-				socket.editorEmit('templateUpdateThumbnail', params);
-			}
-		},15000);*/
 
     //创建socket交互
     this.createSocketAction();

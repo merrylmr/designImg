@@ -208,6 +208,7 @@ var socket = {
             .state
             .io
             .on('connect', function (data) {
+              console.log('connect socket');
                 if (_self.state.vue.$store.state.editor.autoSave) {
                     //console.warn('socket连接已建立');
                     if ($('.save-state').text() == '网络不稳定,请尝试保存模板') {
@@ -227,6 +228,7 @@ var socket = {
             .state
             .io
             .on('disconnect', function () {
+              console.log('disconnect socket');
                 _self.state.vue.$store.state.editor.lastDisconnect = true;
                 if (_self.state.vue.$store.state.editor.autoSave) {
                     //console.warn('socket连接已丢失');
@@ -238,6 +240,7 @@ var socket = {
             .state
             .io
             .on('fileUploadConnected', function (data) {
+              console.log('fileUploadConnected');
                 _self
                     .state
                     .vue
@@ -248,6 +251,7 @@ var socket = {
             .state
             .io
             .on('fileUploaded', function (data) {
+
               console.log('fileUploaded:');
               console.log(data)
 
@@ -257,7 +261,8 @@ var socket = {
             .state
             .io
             .on('editorEmit', function (data) {
-                //console.info('server', data); ////console.log(JSON.stringify(data,null,2));
+              console.log('editorEmit');
+              console.log(data);
                 // 如果服务器返回错误,提示刷新页面
                 if (data.msg != undefined && data.msg.error != 0) {
                     // //console.log('出错',data); 错误,触发一次saveFile
@@ -304,11 +309,17 @@ var socket = {
                     if (data.msg.data.mode == '0') {
                         _self.state.tempTpl = true;
                     }
+
                     eventBus.$emit('socket_templateInfo', data.msg.data);
                 } else {
+                  //pageElements 页面相关
                     var itemData = data.msg.data;
+                    console.log('data.callback:');
+                    console.log(data.callback);
                     eventBus.$emit('socket_' + data.callback, itemData);
                     if (requestObj.func != undefined) {
+                      console.log('exe fn');
+                      console.log(itemData);
                         requestObj.func({
                             data: itemData
                         });
@@ -334,7 +345,6 @@ var socket = {
     editorEmit: function (action, data, func) {
         var sendData = data;
         sendData.action = action;
-        //console.info('client:', sendData);
 
         var requestId = comm.getNewID();
         //将本次请求加入请求列表,等待返回
@@ -356,6 +366,8 @@ var socket = {
                 .io
                 .compress(false)
                 .emit('editorEmit', sendData);
+            console.log('sendData');
+            console.log(sendData);
         } catch (e) {
             //location.reload();
         }

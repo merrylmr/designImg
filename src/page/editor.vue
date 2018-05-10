@@ -229,6 +229,7 @@ export default {
     socket.init(this);
 
     EventBus.$on("stateChange", e => {
+        console.log('stateChange:editor')
       if (e.type == "ready") {
         if (this.$store.state.docData.product == "jianye") {
           //是否显示新手指引
