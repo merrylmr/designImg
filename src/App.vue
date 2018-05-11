@@ -38,9 +38,9 @@
       this.setUserDPI();
 
       //注册全局mouseMove
-      $(window).mousedown(function(e) {
+      /*$(window).mousedown(function(e) {
         eventBus.$emit("globalMouseDown", e);
-      });
+      });*/
       $(window).mousemove(function(e) {
         eventBus.$emit("globalMouseMove", e);
       });

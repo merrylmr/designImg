@@ -2,6 +2,12 @@ import $ from 'jquery';
 import socketIO from 'socket.io-client'
 import eventBus from '@/common/eventBus.js';
 import comm from '@/common/common.js';
+
+import  docData from  '@/assets/json/doc.json';
+
+
+
+
 var socket = {
     state: {
         //socketIO对象
@@ -167,11 +173,12 @@ var socket = {
           return;
         }
 
+        //静态数据
+        // _self.staticData();
+
         /**
          * 调试使用
          */
-        //data.socket_server = 'ws://192.168.1.20:3000';
-
         _self.initSocket(data.socket_server + '/?conn_server=' + data.socket_api_server + '&uid=' + data.uid + '&tpl_id=' + data.tpl_id + '&conn_id=' + data.conn_id + '&access_token=' + data.access_token);
       } else {
 
@@ -194,13 +201,17 @@ var socket = {
             }
           })
       }
-
         //ajax请求socket连接参数
-
     },
+
+    staticData(){
+      setTimeout(()=>{
+        eventBus.$emit('socket_templateInfo', docData.msg.data);
+      },1000);
+    },
+
     //初始化socket
     initSocket(socketURL) {
-        // //console.log('正在连接socket',socketURL);
         var _self = this;
         //连接socket服务器
         this.state.io = socketIO(socketURL);
@@ -208,7 +219,6 @@ var socket = {
             .state
             .io
             .on('connect', function (data) {
-              console.log('connect socket');
                 if (_self.state.vue.$store.state.editor.autoSave) {
                     //console.warn('socket连接已建立');
                     if ($('.save-state').text() == '网络不稳定,请尝试保存模板') {
@@ -228,7 +238,6 @@ var socket = {
             .state
             .io
             .on('disconnect', function () {
-              console.log('disconnect socket');
                 _self.state.vue.$store.state.editor.lastDisconnect = true;
                 if (_self.state.vue.$store.state.editor.autoSave) {
                     //console.warn('socket连接已丢失');
@@ -240,7 +249,6 @@ var socket = {
             .state
             .io
             .on('fileUploadConnected', function (data) {
-              console.log('fileUploadConnected');
                 _self
                     .state
                     .vue
@@ -251,18 +259,14 @@ var socket = {
             .state
             .io
             .on('fileUploaded', function (data) {
-
               console.log('fileUploaded:');
-              console.log(data)
-
+              console.log(data);
                 _self.state.vue.$store.state.editor.uploadPush = data;
             });
         this
             .state
             .io
             .on('editorEmit', function (data) {
-              console.log('editorEmit');
-              console.log(data);
                 // 如果服务器返回错误,提示刷新页面
                 if (data.msg != undefined && data.msg.error != 0) {
                     // //console.log('出错',data); 错误,触发一次saveFile
@@ -309,17 +313,12 @@ var socket = {
                     if (data.msg.data.mode == '0') {
                         _self.state.tempTpl = true;
                     }
-
                     eventBus.$emit('socket_templateInfo', data.msg.data);
                 } else {
                   //pageElements 页面相关
                     var itemData = data.msg.data;
-                    console.log('data.callback:');
-                    console.log(data.callback);
                     eventBus.$emit('socket_' + data.callback, itemData);
                     if (requestObj.func != undefined) {
-                      console.log('exe fn');
-                      console.log(itemData);
                         requestObj.func({
                             data: itemData
                         });
@@ -334,12 +333,6 @@ var socket = {
                 _socket.commitAutoSaveItem();
             }
         }, 5000)
-
-        // //超时计数器 var timer = setInterval(function(){ 	for(var i
-        // =0;i<_self.state.requestList.length;i++){ 		var item =
-        // _self.state.requestList[i]; 		item.timeTick++; 		if(item.timeTick==30){
-        // //console.log('超时了,自动保存文件',item); 			 _self.saveFile();
-        // 			_self.state.requestList.splice(i,1); 			break; 		} 	} },1000);
     },
     //数据更新
     editorEmit: function (action, data, func) {
@@ -474,6 +467,7 @@ var socket = {
             }, true);
         }
         if ((name == 'elementChange' || name == 'pageChange') && event.type == 'update' && event.commitType == undefined) {
+           console.log('elementChange socket:');
 
             //获取参数的target文本
             var eventTargetStr = '';
@@ -483,8 +477,12 @@ var socket = {
                 for (var item in targets) {
 
                     eventTargetStr = eventTargetStr + '*' + targets[item].id;
+
+                    console.log(eventTargetStr);
                 }
             }
+            console.log(this.state.saveList);
+
             var findTargets = false;
             for (var i = 0; i < this.state.saveList.length; i++) {
                 var targets = this.state.saveList[i].event.targets;
@@ -545,6 +543,7 @@ var socket = {
     },
     //处理自动保存
     commitAutoSaveItem() {
+      console.log('autoChange Commit');
         //获取自动保存队列
         var saveList = this.state.saveList;
         if (saveList.length > 0) {

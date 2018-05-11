@@ -850,7 +850,7 @@ export default {
         var vecX =
           Math.cos(angel) * (e.vectorX / _self.getZoom) +
           Math.sin(angel) * (e.vectorY / _self.getZoom);
-
+         console.log('vecX'+vecX);
         _self.width = _self.width + vecX;
 
         _self.$nextTick(function() {
