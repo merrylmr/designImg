@@ -687,6 +687,9 @@ export default {
     },
     //鸟瞰图触发舞台位置变化
     pageScroll(e) {
+        console.log('mousewell');
+        console.log(e);
+
       if (this.$store.state.docData.product == "jianye") {
         this.stageStyle.top += e.wheelDelta * this.getZoom * 0.5;
       } else {
@@ -2895,6 +2898,11 @@ export default {
       }
 
       var hitResult = svgCanvas.getIntersectionList(hitRect, null);
+
+      console.log('hitResult:');
+      console.log(hitResult);
+
+
       var hitList = [];
       var lockList = [];
       for (var i = 0; i < hitResult.length; i++) {
@@ -3056,8 +3064,6 @@ export default {
     getSelectionAttr(name, val) {
       //获取selction-tool整个外边框的style
       if (name == "mainSyle") {
-          console.log('mainSyle:');
-          console.log(this.getSelectedItem);
         var borderColor = "";
         if (this.getSelectedItem != null) {
           var styleObj = {
@@ -4428,6 +4434,8 @@ export default {
       //判断舞台是否发生变更
       if (this.getSelectedItems.length > 0) {
         if (this.moved) {
+            console.log('elementChange:');
+
           //eventBus.$emit('stageChange','dragGroup');
           eventBus.$emit("elementChange", {
             type: "update",

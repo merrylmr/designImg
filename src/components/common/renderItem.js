@@ -1,4 +1,5 @@
 import $ from "jquery";
+import common from "@/common/common.js";
 
 /**
  * 获取当前遍历元素的svg数据(遍历添加到svg画布时,设置v-html)

@@ -3,7 +3,7 @@ export default elementChange="elementChange";
 //页面变更
 export default pageChange="pageChange";
 
-//模板信息
+//模板信息(页面大小)
 export default infoChange="infoChange";
 
 //编辑器状态
