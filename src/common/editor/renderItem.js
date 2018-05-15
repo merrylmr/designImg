@@ -8,7 +8,6 @@ import common from "@/common/common.js";
  * @returns {string}
  */
 function getElementHtml(item, index) {
-  //console.log('更新',item);
   //生成的html结果
   var html = "";
   //边缘选择范围

@@ -2,7 +2,7 @@ import Vue from 'vue';
 import App from './App';
 import router from './router/router';
 import VueResource from 'vue-resource';
-import store from '@/vuex/store';
+import store from '@/store/store';
 
 import clipboard from 'vue-clipboards' //复制到剪切板
 

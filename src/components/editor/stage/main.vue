@@ -141,8 +141,8 @@ import socket from "@/common/socket.js";
 import common from "@/common/common.js";
 import Cookies from "js-cookie";
 
-import {getElementHtml} from '@/components/common/renderItem.js';
-import {createGridSvg} from '@/components/common/createGrid.js';
+import {getElementHtml} from '@/common/editor/renderItem.js';
+import {createGridSvg} from '@/common/editor/createGrid.js';
 
 import onePage from'@/assets/json/onePage.json';
 

@@ -11,7 +11,7 @@ var elementurl = {
 	// 节假日素材（unique）
 	'holiday': '/editor/getMaterial4/query/t-50-c--p-1.html',
 	//容器
-	'contain': '/editor/getMaterial4/query/t-11-c--p-1.html', //t-1-c-''-p-
+	'contain': '/editor/getMaterial4/query/t-11-c--p-1.html',
 	//形状
 	'shape': '/editor/getMaterial4/query/t-1-c--p-1.html',
 	//元素

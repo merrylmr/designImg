@@ -790,11 +790,7 @@ export default{
 
       var zoomA = (areaWidth / stageSize.width);
       var zoomB = (areaHeight / stageSize.height);
-      if (zoomA > zoomB) {
-        var zoom = zoomB;
-      } else {
-        var zoom = zoomA;
-      }
+      var zoom=Math.min(zoomA,zoomB);
 
       state.stage.zoom = parseInt(zoom * val.val);
     } else if (val.type == 'canvas_custom') {
