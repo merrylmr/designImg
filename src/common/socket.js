@@ -173,15 +173,17 @@ var socket = {
           return;
         }
 
+        console.log('islocal:'+window.islocal);
+
         //静态数据
-        // _self.staticData();
+        if(window.islocal){
+          _self.staticData();
+        }else{
+          //调试使用
+          _self.initSocket(data.socket_server + '/?conn_server=' + data.socket_api_server + '&uid=' + data.uid + '&tpl_id=' + data.tpl_id + '&conn_id=' + data.conn_id + '&access_token=' + data.access_token);
+        }
 
-        /**
-         * 调试使用
-         */
-        _self.initSocket(data.socket_server + '/?conn_server=' + data.socket_api_server + '&uid=' + data.uid + '&tpl_id=' + data.tpl_id + '&conn_id=' + data.conn_id + '&access_token=' + data.access_token);
       } else {
-
         _self
           .state
           .vue

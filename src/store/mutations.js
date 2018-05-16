@@ -207,6 +207,10 @@ export default{
   },
   //建立文档快照(用于撤销)
   addDocSnap(state, data) {
+    console.log('docSnap');
+    console.log( state.stage.docSnap);
+    console.log(data);
+
     //创建最近两次的快照
     state
       .stage
@@ -286,7 +290,8 @@ export default{
         .docSnap
         .push(snapItem);
 
-    } else if (data.name == 'pageChange') {
+    }
+    else if (data.name == 'pageChange') {
       //创建元素更新快照
       var targetsSnap = [];
       for (var i in data.targets) {
@@ -335,7 +340,8 @@ export default{
         .docSnap
         .push(snapItem);
 
-    } else if (data.name == 'stateChange') {
+    }
+    else if (data.name == 'stateChange') {
       if (data.type == 'ready') {
         //获取更新后的页面ID列表
         var newList = [];
@@ -359,7 +365,8 @@ export default{
             },
             step: true
           });
-      } else if (data.type == 'loadPage') {
+      }
+      else if (data.type == 'loadPage') {
         state
           .stage
           .docSnap
@@ -372,7 +379,8 @@ export default{
           });
       }
 
-    } else if (data.name == 'infoChange') {
+    }
+    else if (data.name == 'infoChange') {
       state
         .stage
         .docSnap
@@ -463,7 +471,8 @@ export default{
               eventBus.$emit('updateItemHtml', target);
 
               eventType = 'remove';
-            } else if (snapItem.type == 'remove') {
+            }
+            else if (snapItem.type == 'remove') {
 
               console.log('恢复target', snapItem, newData, pageIndex);
 
@@ -475,10 +484,11 @@ export default{
               for (var a = 0; a < state.docData.page[pageIndex].data.length; a++) {
                 state.docData.page[pageIndex].data[a].index = a;
               }
-              eventBus.$emit('updateItemHtml', newData)
+              eventBus.$emit('updateItemHtml', newData);
               eventTargets.push(newData);
               eventType = 'add';
-            } else if (snapItem.type == 'update') {
+            }
+            else if (snapItem.type == 'update') {
               var oldData = JSON.parse(snapTarget.oldData);
               if (target == null) {
                 console.error('出现错误,target没有找到', snapTarget);
@@ -486,8 +496,8 @@ export default{
               target.edit_config = oldData.edit_config;
               target.edit_data = oldData.edit_data;
 
-              //							console.log('设置',target.id,'edit_config',oldData.edit_config);
-              eventBus.$emit('updateItemHtml', target)
+              //console.log('设置',target.id,'edit_config',oldData.edit_config);
+              eventBus.$emit('updateItemHtml', target);
               eventTargets.push(target);
               eventType = 'update';
               for (var a = 0; a < state.docData.page[pageIndex].data.length; a++) {
@@ -503,7 +513,8 @@ export default{
             snap: false
           });
           state.docData.page[pageIndex].data = common.sortArrayByList(state.docData.page[pageIndex].data, snapItem.oldList);
-        } else if (snapItem.name == "pageChange") {
+        }
+        else if (snapItem.name == "pageChange") {
           //遍历目标
           var targetIndex = -1;
           var eventTargets = [];
@@ -560,14 +571,16 @@ export default{
             targets: eventTargets,
             snap: false
           });
-        } else if (snapItem.name == "infoChange") {
+        }
+        else if (snapItem.name == "infoChange") {
           state.docData.edit_config = JSON
             .parse(snapItem.oldData)
             .edit_config
           state.docData.title = JSON
             .parse(snapItem.oldData)
             .title
-        } else if (snapItem.name == "stateChange") {
+        }
+        else if (snapItem.name == "stateChange") {
           if (snapItem.type == 'loadPage') {
             state.docData.editor.nowPage = snapItem.newIndex;
           }
